@@ -37,3 +37,25 @@ How to use it?
 
 4. After a short break you should get an executable inside `out/` directory.
 
+
+# To build using Docker
+
+```bash
+docker build -t build-image .
+```
+
+then run the command using the build image
+
+```bash
+docker run -it --rm -v "$PWD:/data:z" build-image
+```
+
+**OR** you can convieniantly build using `make`
+
+first, make an `.env` file to load your specific variables (usually you will not have to change these values)
+
+```bash
+cp example.env .env
+```
+
+Then, run `make`.
